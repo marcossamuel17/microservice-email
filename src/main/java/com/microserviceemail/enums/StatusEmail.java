@@ -1,4 +1,4 @@
-package enums;
+package com.microserviceemail.enums;
 
 public enum StatusEmail {
 	

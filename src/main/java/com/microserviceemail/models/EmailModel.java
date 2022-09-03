@@ -1,4 +1,4 @@
-package models;
+package com.microserviceemail.models;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -10,11 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import enums.StatusEmail;
+import com.microserviceemail.enums.StatusEmail;
 
 @Entity
 @Table(name = "TB_email")
-
 
 public class EmailModel implements Serializable {
 	private static  final  long serialVersionUID = 1L;
@@ -31,7 +30,27 @@ public class EmailModel implements Serializable {
 	private LocalDateTime sendDateEmail;
 	private StatusEmail statusEmail;
 	
+	public EmailModel() {
+		
+	}
 	
+	
+	public EmailModel(Long emailId, String ownerRef, String emailFrom, String emailTo, String subject, String text,
+			LocalDateTime sendDateEmail, StatusEmail statusEmail) {
+		super();
+		this.emailId = emailId;
+		this.ownerRef = ownerRef;
+		this.emailFrom = emailFrom;
+		this.emailTo = emailTo;
+		this.subject = subject;
+		this.text = text;
+		this.sendDateEmail = sendDateEmail;
+		this.statusEmail = statusEmail;
+	}
+
+
+
+
 	public Long getEmailId() {
 		return emailId;
 	}
